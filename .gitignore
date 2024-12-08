@@ -1,0 +1,9 @@
+# Composer vendor directory
+/vendor/
+/composer.lock
+
+# PHPUnit cache files
+/tests/_support/_generated/
+/tests/_output/
+
+/.idea/

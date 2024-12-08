@@ -1,0 +1,15 @@
+{
+  "name": "iliyazhid/leetcode_solutions",
+  "description": "solutions of leetcode problems",
+  "autoload": {
+    "psr-4": {
+      "LeetcodeSolutions\\": "lib/"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "scripts": {
+    "test": "phpunit tests/"
+  }
+}
