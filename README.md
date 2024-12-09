@@ -22,6 +22,10 @@ php bin/cli.php
    ```bash
 list
    ```
+Просмотр описания задачи
+```bash
+problem <solution_name>
+```
 Запуск конкретного решения
 ```bash
 run <solution_name>
