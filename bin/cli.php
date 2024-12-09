@@ -29,6 +29,17 @@ function runSolution($solutionName): void
     }
 }
 
+function getSolutionProblem($solutionName): void
+{
+    $solutions = getAvailableSolutions();
+
+    if (isset($solutions[$solutionName])) {
+        echo $solutions[$solutionName]::getProblem() . "\n";
+    } else {
+        echo "Решение '$solutionName' не найдено.\n";
+    }
+}
+
 function runTests($solutionName): void
 {
     $solutions = getAvailableSolutions();
@@ -76,7 +87,7 @@ function main(): void
     echo "Добро пожаловать в инструмент Solutions CLI\n";
 
     while (true) {
-        $command = readInput("Введите команду (list, run <solution>, test <solution>, exit): ");
+        $command = readInput("Введите команду (list, problem <solution>, run <solution>, test <solution>, exit): ");
         $args = explode(' ', $command);
 
         switch ($args[0]) {
@@ -97,11 +108,18 @@ function main(): void
                     echo "Пожалуйста укажите решение для тестирования.\n";
                 }
                 break;
+            case 'problem':
+                if (isset($args[1])) {
+                    getSolutionProblem($args[1]);
+                } else {
+                    echo "Пожалуйста укажите решение.\n";
+                }
+                break;
             case 'exit':
                 echo "Выход...\n";
                 exit(0);
             default:
-                echo "Неизвестная команда. Доступные команды: list, run <solution>, test <solution>, exit.\n";
+                echo "Неизвестная команда. Доступные команды: list, problem <solution>, run <solution>, test <solution>, exit.\n";
                 break;
         }
     }

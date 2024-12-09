@@ -20,7 +20,7 @@ class TwoSumSolutionTest extends TestCase
         $this->assertEquals($expectedOutput, $result);
     }
 
-    public function twoSumDataProvider()
+    public function twoSumDataProvider(): array
     {
         return [
             [

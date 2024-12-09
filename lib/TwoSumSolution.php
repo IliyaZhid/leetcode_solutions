@@ -19,7 +19,7 @@ class TwoSumSolution extends BaseSolution
         [$this->nums, $this->target] = $input;
     }
 
-    public function getDescription(): string
+    public static function getProblem(): string
     {
         return 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
